@@ -1,1 +1,13 @@
-/* media queries, etc */
+@media (max-width: 640px) {
+	header div ul li {
+		display:  block;
+	}
+
+	header div ul li:first-child {
+		margin-bottom: 0.5em;
+	}
+
+	header div ul li:first-child::after {
+		content: unset;
+	}
+}

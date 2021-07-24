@@ -4,7 +4,7 @@ body {
 	font-family: "ChicagoFLF";
 }
 
-div, article {
+div {
 	border:  2px solid black;
 	background:  white;
 	padding:  0.5em 1em;
@@ -69,12 +69,15 @@ section h2 {
 }
 
 section article {
+	background:  white;
+	padding:  0.5em 1em;
 	position:  relative;
-	width:  640px;
+	width: 80%;
+	max-width:  640px;
 	/*height: 480px;*/
 	overflow-y: scroll;
-	border-top:  none;
-	border-bottom:  none;
+	border-left: 2px solid black;
+	border-right: 2px solid black;
 	left:  50%;
 	transform:  translateX(-50%);
 }
@@ -88,6 +91,12 @@ section article ul li {
 	display:  inline;
 }
 
+section article ul li:not(:first-child),
+section article ul li:not(:last-child) {
+	border-top:  none !important;
+	border-bottom: none !important;
+}
+
 section article ul li:not(:last-child)::after {
 	content:  ",";
 }
@@ -97,6 +106,7 @@ section article:first-child {
 }
 
 section article:last-child {
+	border-top: none;
 	border-bottom:  2px solid black;
 }
 
