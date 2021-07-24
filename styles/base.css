@@ -1,0 +1,123 @@
+body {
+	background:  #9e9e9e;
+	font-size:  16px;
+	font-family: "ChicagoFLF";
+}
+
+div, article {
+	border:  2px solid black;
+	background:  white;
+	padding:  0.5em 1em;
+}
+
+header {
+	height: 100vh;
+	width:  100vw;
+	display:  flex;
+	justify-content: center;
+	align-items: center;
+	text-align:  center;
+}
+
+header div {
+	position: relative;
+}
+
+header div ul {
+	list-style-type:  none;
+	padding-left: 0;
+}
+
+header div ul li {
+	display:  inline;
+}
+
+header div ul li:first-child::after {
+	content:  " | ";
+}
+
+header div p {
+	position: absolute;
+	width: calc(100% - 2em);
+	bottom: -4em;
+	color: white;
+	opacity: 0;
+	animation-name: pulse;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;	
+}
+
+section {
+	min-height:  100vh;
+	/*width:  100vh;*/
+	/*display:  flex;*/
+/*			justify-content: center;
+	align-items: center;*/
+	margin-bottom:  4em;
+}
+
+section h2 {
+	position:  -webkit-sticky;
+	position:  sticky;
+	top: 0px;
+	padding:  0.5em;
+	background:  white;
+	border:  2px solid black;
+	margin-bottom:  6em;
+	z-index: 1000;
+}
+
+section article {
+	position:  relative;
+	width:  640px;
+	/*height: 480px;*/
+	overflow-y: scroll;
+	border-top:  none;
+	border-bottom:  none;
+	left:  50%;
+	transform:  translateX(-50%);
+}
+
+section article ul {
+	list-style-type:  none;
+	padding-left: 0;
+}
+
+section article ul li {
+	display:  inline;
+}
+
+section article ul li:not(:last-child)::after {
+	content:  ",";
+}
+
+section article:first-child {
+	border-top:  2px solid black;
+}
+
+section article:last-child {
+	border-bottom:  2px solid black;
+}
+
+@keyframes pulse {
+	from {
+		opacity: 0;
+	}
+
+	25% {
+		opacity:  0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	75% {
+		opacity:  0;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
